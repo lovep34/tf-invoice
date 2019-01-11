@@ -1,0 +1,35 @@
+<div class="content">
+  <div class="row">
+<div class="col-md-12">
+    <div class="card">
+        <div class="card-header">
+            <h4 class="card-title">User posts</h4>
+          </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <div *ngIf="undefined === restItems" style="text-align: center">Loading...</div>
+                <table class="table" *ngIf="undefined !== restItems">
+                  <thead class="text-primary">
+                    <tr>
+                      <th>Post title</th>
+                      <th>Author</th>
+                      <th>Published date</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let post of restItems['posts']">
+                      <td>{{post.title}}</td>
+                      <td>{{post.author.first_name}}</td>
+                      <td>{{post.date | date : full}}</td>
+                    </tr>
+                  </tbody>
+                </table>
+            </div>
+         </div>
+      </div>
+  </div>
+  </div>
+  </div>
+
+
+
